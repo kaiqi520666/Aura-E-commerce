@@ -62,7 +62,7 @@
     "build": "cool entity && bundle && mwtsc --cleanOutDir",
     "build:obfuscate": "cool entity && bundle && mwtsc --cleanOutDir && cool obfuscate",
     "pkg": "rimraf build && mkdir build && npm run build && pkg . -d > build/pkg.log",
-    "pm2:start": "pm2 start ./bootstrap.js -i 1 --name aura-admin",
+    "pm2:start": "cross-env NODE_ENV=production pm2 start ./bootstrap.js -i 1 --name aura-admin",
     "pm2:stop": "pm2 stop aura-admin & pm2 delete aura-admin"
   },
   "bin": "./bootstrap.js",

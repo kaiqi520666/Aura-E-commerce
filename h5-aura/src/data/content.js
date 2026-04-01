@@ -192,8 +192,7 @@ export const fallbackReviews = [
     userName: 'Emma',
     rating: 5,
     title: 'Compliment magnet',
-    content:
-      'This scent gets me compliments every single time. Feminine, clean, and memorable.',
+    content: 'This scent gets me compliments every single time. Feminine, clean, and memorable.',
   },
   {
     id: 3,
@@ -201,8 +200,7 @@ export const fallbackReviews = [
     userName: 'Olivia',
     rating: 5,
     title: 'Staple piece',
-    content:
-      'Exactly the kind of gold hoop that works with everything. Lightweight and polished.',
+    content: 'Exactly the kind of gold hoop that works with everything. Lightweight and polished.',
   },
   {
     id: 4,
@@ -246,12 +244,12 @@ export const occasionCards = [
   {
     id: 'o1',
     name: 'Everyday Glow',
-    image: '/images/r01.png',
+    image: '/images/r01.jpg',
   },
   {
     id: 'o2',
     name: 'Weekend Out',
-    image: '/images/r02.png',
+    image: '/images/r02.jpg',
   },
 ]
 
@@ -260,32 +258,33 @@ export const communityPosts = [
     id: 1,
     user: '@sophia.styles',
     text: 'Obsessed with the Dewy Lip Balm. My everyday go-to.',
-    image: '/images/z01.png',
+    image: '/images/z01.jpg',
   },
   {
     id: 2,
     user: '@emma_minimal',
     text: 'The Cloud Bag fits literally everything while looking so chic.',
-    image: '/images/z02.png',
+    image: '/images/z02.jpg',
   },
   {
     id: 3,
     user: '@glowwithmia',
     text: 'Aura perfume gets me compliments every single time I wear it.',
-    image: '/images/z03.png',
+    image: '/images/z03.jpg',
   },
   {
     id: 4,
     user: '@chloe.aesthetics',
     text: 'Staple jewelry piece. Never taking these hoops off.',
-    image: '/images/z04.png',
+    image: '/images/z04.jpg',
   },
 ]
 
 export const policyPages = {
   privacy: {
     title: 'Privacy Policy',
-    intro: 'We collect only the information required to process orders, support your account, and improve the store experience.',
+    intro:
+      'We collect only the information required to process orders, support your account, and improve the store experience.',
     sections: [
       'We store account details, shipping information, and order history to fulfill purchases and customer support requests.',
       'Payment processing is handled by external providers. We do not store full card details or private wallet keys.',
@@ -294,7 +293,8 @@ export const policyPages = {
   },
   terms: {
     title: 'Terms of Service',
-    intro: 'By using this storefront, you agree to provide accurate checkout information and comply with applicable laws.',
+    intro:
+      'By using this storefront, you agree to provide accurate checkout information and comply with applicable laws.',
     sections: [
       'Orders may be cancelled if payment is not completed or inventory becomes unavailable before fulfillment.',
       'Product colors and textures may appear slightly different across screens and devices.',
@@ -303,7 +303,8 @@ export const policyPages = {
   },
   refund: {
     title: 'Refund Policy',
-    intro: 'Refund requests are reviewed based on payment status, delivery condition, and product category.',
+    intro:
+      'Refund requests are reviewed based on payment status, delivery condition, and product category.',
     sections: [
       'Unused items in resellable condition may be eligible for return within the published return window.',
       'Personal-use beauty products may not be returnable once opened unless defective or damaged.',

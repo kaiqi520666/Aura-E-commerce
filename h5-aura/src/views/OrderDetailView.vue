@@ -182,7 +182,10 @@ onMounted(loadOrder)
       <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p class="eyebrow">Order Detail</p>
-          <h1 class="mt-3 font-[var(--font-display)] text-5xl text-[var(--color-ink)]">
+          <h1
+            class="mt-3 max-w-full overflow-hidden text-ellipsis whitespace-nowrap font-[var(--font-display)] text-[clamp(2.2rem,10vw,3.6rem)] text-[var(--color-ink)]"
+            :title="order.orderNo"
+          >
             {{ order.orderNo }}
           </h1>
         </div>

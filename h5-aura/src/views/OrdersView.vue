@@ -101,7 +101,7 @@ onMounted(loadOrders)
     <div v-else-if="orders.length" class="grid gap-4">
       <article v-for="order in orders" :key="order.id" class="flex flex-col gap-5 rounded-[1.1rem] border border-[var(--color-border)] bg-white p-6 shadow-[0_18px_40px_rgba(17,17,17,0.04)] lg:flex-row lg:items-center lg:justify-between">
         <div>
-          <p class="eyebrow">{{ order.orderNo }}</p>
+          <p class="eyebrow max-w-full overflow-hidden text-ellipsis whitespace-nowrap" :title="order.orderNo">{{ order.orderNo }}</p>
           <h2 class="mt-2 font-[var(--font-display)] text-3xl text-[var(--color-ink)]">{{ order.status }}</h2>
           <p class="mt-2 text-sm text-[var(--color-muted)]">{{ order.itemCount }} items • ${{ Number(order.totalAmount).toFixed(2) }}</p>
         </div>

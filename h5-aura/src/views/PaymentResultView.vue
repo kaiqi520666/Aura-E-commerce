@@ -56,13 +56,13 @@ const pageMeta = computed(() => {
             <span>Payment type</span>
             <span class="text-right text-[var(--color-ink)]">{{ isProxyPayment ? 'Proxy payment' : 'Order payment' }}</span>
           </div>
-          <div v-if="orderNo" class="flex items-center justify-between gap-4">
+          <div v-if="orderNo" class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
             <span>Order number</span>
-            <span class="text-right text-[var(--color-ink)]">{{ orderNo }}</span>
+            <span class="max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-left text-[var(--color-ink)] sm:text-right" :title="orderNo">{{ orderNo }}</span>
           </div>
-          <div v-if="paymentNo" class="flex items-center justify-between gap-4">
+          <div v-if="paymentNo" class="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
             <span>Payment number</span>
-            <span class="text-right text-[var(--color-ink)]">{{ paymentNo }}</span>
+            <span class="max-w-full overflow-hidden text-ellipsis whitespace-nowrap text-left text-[var(--color-ink)] sm:text-right" :title="paymentNo">{{ paymentNo }}</span>
           </div>
         </div>
       </div>

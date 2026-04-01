@@ -10,15 +10,8 @@ export class MallProductEntity extends BaseEntity {
   @Column({ comment: '分类ID' })
   categoryId: number;
 
-  @Index({ unique: true })
-  @Column({ comment: '商品标识', length: 64 })
-  slug: string;
-
   @Column({ comment: '商品名称', length: 128 })
   name: string;
-
-  @Column({ comment: '简短描述', nullable: true, length: 255 })
-  subtitle: string;
 
   @Column({ comment: '商品描述', type: 'text', nullable: true })
   description: string;
@@ -55,14 +48,29 @@ export class MallProductEntity extends BaseEntity {
   @Column({ comment: '库存', default: 0 })
   stock: number;
 
-  @Column({ comment: '状态 0-禁用 1-启用', default: 1 })
+  @Column({
+    comment: '状态',
+    default: 1,
+    dict: ['禁用', '启用'],
+    type: 'tinyint',
+  })
   status: number;
 
-  @Column({ comment: '是否精选', default: false })
-  featured: boolean;
+  @Column({
+    comment: '是否精选',
+    default: false,
+    dict: ['否', '是'],
+    type: 'tinyint',
+  })
+  featured: number;
 
-  @Column({ comment: '是否热卖', default: false })
-  bestSeller: boolean;
+  @Column({
+    comment: '是否热卖',
+    default: false,
+    dict: ['否', '是'],
+    type: 'tinyint',
+  })
+  bestSeller: number;
 
   @Column({
     comment: '评分',

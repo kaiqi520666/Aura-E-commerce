@@ -638,19 +638,9 @@ declare namespace Eps {
 		categoryId?: number;
 
 		/**
-		 * 商品标识
-		 */
-		slug?: string;
-
-		/**
 		 * 商品名称
 		 */
 		name?: string;
-
-		/**
-		 * 简短描述
-		 */
-		subtitle?: string;
 
 		/**
 		 * 商品描述
@@ -683,19 +673,19 @@ declare namespace Eps {
 		stock?: number;
 
 		/**
-		 * 状态 0-禁用 1-启用
+		 * 状态
 		 */
 		status?: number;
 
 		/**
 		 * 是否精选
 		 */
-		featured?: boolean;
+		featured?: number;
 
 		/**
 		 * 是否热卖
 		 */
-		bestSeller?: boolean;
+		bestSeller?: number;
 
 		/**
 		 * 评分

@@ -30,12 +30,12 @@ export class MallProductService extends BaseService {
         take: 4,
       }),
       this.mallProductEntity.find({
-        where: { status: 1, bestSeller: true },
+        where: { status: 1, bestSeller: 1 },
         order: { createTime: 'DESC' },
         take: 4,
       }),
       this.mallProductEntity.find({
-        where: { status: 1, featured: true },
+        where: { status: 1, featured: 1 },
         order: { createTime: 'DESC' },
         take: 8,
       }),
@@ -62,7 +62,7 @@ export class MallProductService extends BaseService {
       .where('a.status = :status', { status: 1 });
 
     if (query.keyword) {
-      find.andWhere('(a.name LIKE :keyword OR a.subtitle LIKE :keyword)', {
+      find.andWhere('(a.name LIKE :keyword OR a.description LIKE :keyword)', {
         keyword: `%${query.keyword}%`,
       });
     }

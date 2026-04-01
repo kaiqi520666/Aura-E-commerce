@@ -11,8 +11,7 @@ import { MallProductService } from '../../service/product';
   service: MallProductService,
   pageQueryOp: {
     fieldEq: ['a.status', 'a.categoryId', 'a.featured', 'a.bestSeller'],
-    fieldLike: ['a.slug'],
-    keyWordLikeFields: ['a.name', 'a.subtitle', 'a.description'],
+    keyWordLikeFields: ['a.name', 'a.description'],
     addOrderBy: {
       createTime: 'DESC',
     },

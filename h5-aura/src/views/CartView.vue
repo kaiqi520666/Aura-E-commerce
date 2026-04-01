@@ -59,7 +59,6 @@ onMounted(async () => {
           <img :alt="item.product?.name" :src="item.product?.mainImage" class="aspect-square w-full rounded-[1.1rem] object-cover" />
           <div>
             <RouterLink :to="{ name: 'product-detail', params: { id: item.productId } }" class="font-[var(--font-display)] text-3xl text-[var(--color-ink)]">{{ item.product?.name }}</RouterLink>
-            <p class="mt-2 text-sm leading-7 text-[var(--color-muted)]">{{ item.product?.subtitle }}</p>
             <p class="mt-3 text-lg font-semibold text-[var(--color-wine)]">${{ Number(item.product?.price).toFixed(2) }}</p>
           </div>
           <div class="flex flex-col items-end gap-4">

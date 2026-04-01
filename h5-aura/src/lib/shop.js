@@ -40,7 +40,8 @@ export async function fetchProducts(filters = {}) {
     const list = fallbackProducts.filter((item) => {
       const byCategory = !filters.categorySlug || item.categoryId === category?.id
       const keyword = String(filters.keyword || '').toLowerCase()
-      const byKeyword = !keyword || `${item.name} ${item.subtitle}`.toLowerCase().includes(keyword)
+      const byKeyword =
+        !keyword || `${item.name} ${item.description || ''}`.toLowerCase().includes(keyword)
       const byMin = !filters.minPrice || item.price >= Number(filters.minPrice)
       const byMax = !filters.maxPrice || item.price <= Number(filters.maxPrice)
       return byCategory && byKeyword && byMin && byMax

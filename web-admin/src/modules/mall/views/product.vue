@@ -90,24 +90,11 @@ const Upsert = useUpsert({
 			required: true
 		},
 		{
-			label: t('商品标识'),
-			prop: 'slug',
-			component: { name: 'el-input', props: { clearable: true } },
-			span: 12,
-			required: true
-		},
-		{
 			label: t('商品名称'),
 			prop: 'name',
 			component: { name: 'el-input', props: { clearable: true } },
 			span: 12,
 			required: true
-		},
-		{
-			label: t('简短描述'),
-			prop: 'subtitle',
-			component: { name: 'el-input', props: { clearable: true } },
-			span: 12
 		},
 		{
 			label: t('商品描述'),
@@ -130,55 +117,55 @@ const Upsert = useUpsert({
 		{
 			label: t('价格'),
 			prop: 'price',
-			component: { name: 'el-input', props: { clearable: true } },
+			component: { name: 'el-input-number', props: { clearable: true } },
 			span: 12,
 			required: true
 		},
 		{
 			label: t('划线价'),
 			prop: 'comparePrice',
-			component: { name: 'el-input', props: { clearable: true } },
+			component: { name: 'el-input-number', props: { clearable: true } },
 			span: 12
 		},
 		{
 			label: t('库存'),
 			prop: 'stock',
-			component: { name: 'el-input', props: { clearable: true } },
+			component: { name: 'el-input-number', props: { clearable: true } },
 			span: 12,
 			required: true
 		},
 		{
 			label: t('状态'),
 			prop: 'status',
-			component: { name: 'el-input', props: { clearable: true } },
+			component: { name: 'cl-switch', props: { clearable: true } },
 			span: 12,
 			required: true
 		},
 		{
 			label: t('是否精选'),
 			prop: 'featured',
-			component: { name: 'el-input', props: { clearable: true } },
+			component: { name: 'cl-switch', props: { clearable: true } },
 			span: 12,
 			required: true
 		},
 		{
 			label: t('是否热卖'),
 			prop: 'bestSeller',
-			component: { name: 'el-input', props: { clearable: true } },
+			component: { name: 'cl-switch', props: { clearable: true } },
 			span: 12,
 			required: true
 		},
 		{
 			label: t('评分'),
 			prop: 'rating',
-			component: { name: 'el-input', props: { clearable: true } },
+			component: { name: 'el-input-number', props: { clearable: true } },
 			span: 12,
 			required: true
 		},
 		{
 			label: t('评论数'),
 			prop: 'reviewCount',
-			component: { name: 'el-input', props: { clearable: true } },
+			component: { name: 'el-input-number', props: { clearable: true } },
 			span: 12,
 			required: true
 		}
@@ -190,7 +177,6 @@ const Table = useTable({
 	columns: [
 		{ type: 'selection' },
 		{ label: t('分类ID'), prop: 'categoryId', minWidth: 120 },
-		{ label: t('商品标识'), prop: 'slug', minWidth: 120 },
 		{ label: t('商品名称'), prop: 'name', minWidth: 120 },
 
 		{ label: t('主图'), prop: 'mainImage', minWidth: 120, component: { name: 'cl-image' } },

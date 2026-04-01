@@ -255,7 +255,6 @@ onMounted(loadProduct)
           <h1 class="mt-3 font-[var(--font-display)] text-5xl text-[var(--color-ink)]">
             {{ product.name }}
           </h1>
-          <p class="mt-4 text-lg text-[var(--color-muted)]">{{ product.subtitle }}</p>
 
           <div class="mt-5 flex items-center gap-3 text-sm text-[var(--color-muted)]">
             <div class="inline-flex items-center gap-1 text-[var(--color-accent)]">

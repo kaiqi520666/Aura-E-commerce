@@ -11,10 +11,11 @@
 
 前台目标是移动端/H5 购物体验，强调视觉氛围、礼赠感和轻内容化展示；后台目标是支撑商品、分类、购物车、收藏、下单、评论、支付和代付链路。
 
-当前仓库不是单一应用，而是两个需要分别运行的子项目：
+当前仓库不是单一应用，而是三个需要按职责理解的子项目：
 
 - `h5-aura`：Vue 3 + Vite 的商城前台
 - `admin-backend`：cool-admin-midway 的 Node.js/TypeScript 后端
+- `web-admin`：Vue 3 + cool-admin-vue 的后台管理前端
 
 ## 仓库结构
 
@@ -44,6 +45,14 @@
 - `src/modules/mall`：商城主业务模块
 - `src/modules/user`：商城前台用户模块
 - `src/modules/base`、`dict`、`plugin`、`recycle`、`space`、`swagger`、`task`、`demo`：框架基础能力或示例模块
+
+### `web-admin`
+
+后台管理端，主要用于维护商品、分类、订单、评论等后台数据，核心目录如下：
+
+- `src/modules`：按模块划分的后台页面
+- `src/modules/mall/views`：商城后台页面，商品/分类等管理界面在这里
+- `build/cool`：cool 生成的 eps/service 元数据
 
 ## 前端业务结论
 
@@ -243,6 +252,12 @@
 - PayPal 已从“模拟 approve 即成功”升级为真实 Orders API 对接，前端改为在订单详情页和代付页内渲染 PayPal Buttons
 - 商城支付记录新增 `providerOrderId`，用于保存 PayPal order id 并支撑 capture / webhook 幂等
 - PayPal 新增普通支付与代付两套 create/capture 接口；`epusdt` 旧的 `checkoutUrl` 跳转流保持不变
+
+### 2026-04-01
+
+- 商品模型做了精简，删除了商品 `subtitle` 和商品 `slug`，保留 `name + description` 作为前台展示与搜索主字段
+- 影响目录：`admin-backend/src/modules/mall`、`h5-aura/src`、`web-admin/src/modules/mall/views`
+- 后续协作结论：不要再把商品副标题或商品 SEO 标识当成现有字段使用；分类 `slug` 仍然保留并继续承担前台分类筛选与导航跳转
 
 ### 后续追加格式
 

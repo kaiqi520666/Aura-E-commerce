@@ -53,7 +53,6 @@ async function quickAdd() {
       <RouterLink :to="{ name: 'product-detail', params: { id: product.id } }" class="mt-2 font-[var(--font-display)] text-2xl leading-tight text-[var(--color-ink)]">
         {{ product.name }}
       </RouterLink>
-      <p class="mt-2 text-sm leading-6 text-[var(--color-muted)]">{{ product.subtitle }}</p>
 
       <div class="mt-4 flex items-center gap-2 text-sm text-[var(--color-muted)]">
         <div class="inline-flex items-center gap-1 text-[var(--color-accent)]">

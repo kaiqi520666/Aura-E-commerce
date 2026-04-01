@@ -33,9 +33,7 @@ export const fallbackProducts = [
   {
     id: 1,
     categoryId: 1,
-    slug: 'velvet-lip-tint-rosewood',
     name: 'Velvet Lip Tint - Rosewood',
-    subtitle: 'Blurred pigment with a soft matte finish.',
     description:
       'A cloud-soft lip tint with long-wear comfort and a muted rosewood tone that suits day and night looks.',
     mainImage: '/images/1.webp',
@@ -51,9 +49,7 @@ export const fallbackProducts = [
   {
     id: 2,
     categoryId: 2,
-    slug: 'aura-eau-de-parfum',
     name: 'Aura Eau de Parfum',
-    subtitle: 'Warm florals layered with clean musk.',
     description:
       'A refined everyday fragrance with bright citrus, velvet petals, and a creamy musk trail made for compliments.',
     mainImage: '/images/2.webp',
@@ -69,9 +65,7 @@ export const fallbackProducts = [
   {
     id: 3,
     categoryId: 3,
-    slug: 'chunky-gold-hoops',
     name: 'Chunky Gold Hoops',
-    subtitle: 'A polished staple for elevated basics.',
     description:
       'Lightweight statement hoops with a softly rounded shape that balance clean lines with a luxe finish.',
     mainImage: '/images/3.webp',
@@ -87,9 +81,7 @@ export const fallbackProducts = [
   {
     id: 4,
     categoryId: 4,
-    slug: 'minimalist-cloud-bag',
     name: 'Minimalist Cloud Bag',
-    subtitle: 'A compact shape with soft volume.',
     description:
       'A minimal carry-all with plush structure, subtle sheen, and enough room for the essentials plus one extra.',
     mainImage: '/images/4.webp',
@@ -105,9 +97,7 @@ export const fallbackProducts = [
   {
     id: 5,
     categoryId: 1,
-    slug: 'dewy-lip-balm-clear',
     name: 'Dewy Lip Balm - Clear',
-    subtitle: 'Hydration with a glassy finish.',
     description:
       'A conditioning balm for an effortless glossy lip and a naturally fuller-looking finish.',
     mainImage: '/images/5.webp',
@@ -123,9 +113,7 @@ export const fallbackProducts = [
   {
     id: 6,
     categoryId: 2,
-    slug: 'midnight-jasmine-perfume',
     name: 'Midnight Jasmine Perfume',
-    subtitle: 'A deeper floral for after-dark dressing.',
     description:
       'Velvety jasmine wrapped in amber woods for a more sensual mood without feeling too heavy.',
     mainImage: '/images/6.webp',
@@ -141,9 +129,7 @@ export const fallbackProducts = [
   {
     id: 7,
     categoryId: 3,
-    slug: 'pearl-drop-necklace',
     name: 'Pearl Drop Necklace',
-    subtitle: 'Soft shine with clean styling.',
     description:
       'An understated pearl accent necklace that layers effortlessly with minimal gold basics.',
     mainImage: '/images/7.webp',
@@ -159,9 +145,7 @@ export const fallbackProducts = [
   {
     id: 8,
     categoryId: 4,
-    slug: 'structured-mini-tote',
     name: 'Structured Mini Tote',
-    subtitle: 'Small format, strong silhouette.',
     description:
       'A mini tote with a crisp shape, easy shoulder carry, and enough space for all-day essentials.',
     mainImage: '/images/8.webp',

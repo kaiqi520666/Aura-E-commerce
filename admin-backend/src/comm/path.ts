@@ -13,13 +13,19 @@ const getKeys = () => {
   const keys = configContent.match(/keys: '([^']+)'/)?.[1];
   return keys;
 };
+const PROD_UPLOAD_PATH = '/www/wwwroot/e-shop/images/upload';
+
+const isProd =
+  process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production';
 
 /**
  * 项目数据目录
- * @returns
  */
 export const pDataPath = () => {
-  const dirPath = path.join(os.homedir(), '.cool-admin', md5(getKeys()));
+  const dirPath = isProd
+    ? PROD_UPLOAD_PATH
+    : path.join(os.homedir(), '.cool-admin', md5(getKeys()));
+
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath, { recursive: true });
   }
@@ -28,9 +34,10 @@ export const pDataPath = () => {
 
 /**
  * 上传目录
- * @returns
  */
 export const pUploadPath = () => {
+  if (isProd) return pDataPath();
+
   const uploadPath = path.join(pDataPath(), 'upload');
   if (!fs.existsSync(uploadPath)) {
     fs.mkdirSync(uploadPath, { recursive: true });

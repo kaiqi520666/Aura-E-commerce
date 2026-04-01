@@ -4,6 +4,8 @@ import { ModuleConfig } from '@cool-midway/core';
  * 模块配置
  */
 export default options => {
+  const isProd =
+    process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production';
   return {
     // 模块名称
     name: '插件模块',
@@ -20,7 +22,9 @@ export default options => {
       // 文件上传
       upload: {
         // 地址前缀
-        domain: `http://127.0.0.1:${options?.app?.getConfig('koa.port')}`,
+        domain: isProd
+          ? 'https://image.fdshop.top'
+          : `http://127.0.0.1:${options?.app?.getConfig('koa.port')}`,
       },
     },
   } as ModuleConfig;

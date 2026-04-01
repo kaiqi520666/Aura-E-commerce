@@ -79,7 +79,23 @@ onMounted(loadOrders)
     </div>
 
     <div v-if="loading" class="grid gap-4">
-      <div v-for="index in 4" :key="index" class="h-28 animate-pulse rounded-[1.1rem] bg-white"></div>
+      <article
+        v-for="index in 4"
+        :key="index"
+        class="skeleton-panel p-6"
+      >
+        <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div class="space-y-3">
+            <div class="skeleton-block skeleton-line w-44"></div>
+            <div class="skeleton-block h-10 w-36 rounded-[1.1rem]"></div>
+            <div class="skeleton-block skeleton-line w-28"></div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <div class="skeleton-block h-12 w-28 rounded-full"></div>
+            <div class="skeleton-block h-12 w-34 rounded-full"></div>
+          </div>
+        </div>
+      </article>
     </div>
 
     <div v-else-if="orders.length" class="grid gap-4">

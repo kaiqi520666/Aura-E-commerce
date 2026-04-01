@@ -116,7 +116,18 @@ onMounted(async () => {
 
       <div>
         <div v-if="loading" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          <div v-for="index in 6" :key="index" class="aspect-[4/5] animate-pulse rounded-[1.1rem] bg-white/70"></div>
+          <article
+            v-for="index in 6"
+            :key="index"
+            class="skeleton-panel overflow-hidden p-4"
+          >
+            <div class="skeleton-block aspect-[4/5] w-full rounded-[1.1rem]"></div>
+            <div class="mt-5 space-y-3">
+              <div class="skeleton-block skeleton-line w-3/4"></div>
+              <div class="skeleton-block skeleton-line w-1/2"></div>
+              <div class="skeleton-block skeleton-line w-1/3"></div>
+            </div>
+          </article>
         </div>
         <div v-else-if="result.list.length" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           <ProductCard v-for="product in result.list" :key="product.id" :product="product" />

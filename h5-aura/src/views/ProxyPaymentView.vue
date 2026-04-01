@@ -67,7 +67,78 @@ onMounted(loadDetail)
       <p class="mt-4 max-w-2xl text-sm leading-7 text-[var(--color-muted)]">This page shows a locked order summary. Product lines and shipping details cannot be edited here.</p>
     </div>
 
-    <div v-if="loading" class="h-60 animate-pulse rounded-[1.1rem] bg-white"></div>
+    <div v-if="loading" class="grid gap-8 lg:grid-cols-[1fr_360px]">
+      <div class="space-y-4">
+        <article
+          v-for="index in 2"
+          :key="`proxy-item-skeleton-${index}`"
+          class="skeleton-panel p-5"
+        >
+          <div class="grid gap-4 sm:grid-cols-[110px_1fr_auto] sm:items-center">
+            <div class="skeleton-block aspect-square rounded-[1rem]"></div>
+            <div class="space-y-3">
+              <div class="skeleton-block h-10 w-3/4 rounded-[1.1rem]"></div>
+              <div class="skeleton-block skeleton-line w-1/4"></div>
+            </div>
+            <div class="skeleton-block skeleton-line w-18"></div>
+          </div>
+        </article>
+
+        <div class="skeleton-panel p-6">
+          <div class="mb-4">
+            <div class="skeleton-block skeleton-line w-36"></div>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
+            <article
+              v-for="index in 4"
+              :key="`proxy-review-skeleton-${index}`"
+              class="rounded-[1.1rem] bg-[var(--color-cream)] p-4"
+            >
+              <div class="flex gap-2">
+                <div
+                  v-for="star in 5"
+                  :key="`${index}-${star}`"
+                  class="skeleton-block h-4 w-4 rounded-full"
+                ></div>
+              </div>
+              <div class="mt-3 space-y-3">
+                <div class="skeleton-block skeleton-line w-full"></div>
+                <div class="skeleton-block skeleton-line w-[88%]"></div>
+                <div class="skeleton-block skeleton-line w-1/4"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <aside class="skeleton-panel h-fit p-6">
+        <div class="mb-4">
+          <div class="skeleton-block skeleton-line w-28"></div>
+        </div>
+        <div class="flex items-center gap-3 rounded-[1rem] bg-[var(--color-cream)] px-4 py-3">
+          <div class="skeleton-block h-12 w-12 rounded-full"></div>
+          <div class="flex-1 space-y-2">
+            <div class="skeleton-block skeleton-line w-20"></div>
+            <div class="skeleton-block skeleton-line w-24"></div>
+          </div>
+        </div>
+        <div class="mt-4 space-y-3">
+          <div class="skeleton-block skeleton-line w-20"></div>
+          <div class="skeleton-block skeleton-line w-full"></div>
+          <div class="skeleton-block skeleton-line w-2/3"></div>
+        </div>
+        <div class="mt-4 rounded-[1rem] bg-[var(--color-cream)] px-4 py-3">
+          <div class="skeleton-block skeleton-line w-full"></div>
+        </div>
+        <div class="mt-6 space-y-3">
+          <div class="skeleton-block h-16 rounded-[1.1rem]"></div>
+          <div class="skeleton-block h-16 rounded-[1.1rem]"></div>
+        </div>
+        <div class="mt-6">
+          <div class="skeleton-block h-12 rounded-full"></div>
+        </div>
+      </aside>
+    </div>
 
     <div v-else-if="detail" class="grid gap-8 lg:grid-cols-[1fr_360px]">
       <div class="space-y-4">

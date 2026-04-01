@@ -102,23 +102,21 @@ onMounted(async () => {
               <div>
                 <p class="eyebrow">Soft Luxe Edit</p>
                 <p
-                  class="mt-3 max-w-[14rem] font-[var(--font-display)] text-[2rem] leading-[0.95] text-[var(--color-ink)]"
+                  class="mt-3 max-w-56 font-(--font-display) text-[2rem] leading-[0.95] text-(--color-ink)"
                 >
                   Effortless pieces for everyday glamour.
                 </p>
               </div>
               <span
-                class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white text-[var(--color-wine)] shadow-[0_10px_24px_rgba(128,47,68,0.12)]"
+                class="inline-flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white text-(--color-wine) shadow-[0_10px_24px_rgba(128,47,68,0.12)]"
               >
                 <Sparkles class="h-4 w-4" />
               </span>
             </div>
             <div
-              class="mt-4 flex items-center gap-2 border-t border-[rgba(128,47,68,0.1)] pt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]"
+              class="mt-4 flex items-center gap-2 border-t border-[rgba(128,47,68,0.1)] pt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-(--color-muted)"
             >
-              <span class="rounded-full bg-white px-3 py-1.5 text-[var(--color-wine)]"
-                >Daily glow</span
-              >
+              <span class="rounded-full bg-white px-3 py-1.5 text-(--color-wine)">Daily glow</span>
               <span class="rounded-full bg-white px-3 py-1.5">Gift-ready</span>
             </div>
           </div>
@@ -130,11 +128,11 @@ onMounted(async () => {
       <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <p class="eyebrow">Shop By Vibe</p>
-          <h2 class="mt-3 font-[var(--font-display)] text-4xl text-[var(--color-ink)]">
+          <h2 class="mt-3 font-(--font-display) text-4xl text-(--color-ink)">
             Find your mood first.
           </h2>
         </div>
-        <p class="max-w-md text-sm leading-7 text-[var(--color-muted)]">
+        <p class="max-w-md text-sm leading-7 text-(--color-muted)">
           Explore curated moods with a softer, lighter editorial layout that feels closer to the
           rest of the storefront.
         </p>
@@ -144,7 +142,7 @@ onMounted(async () => {
         <RouterLink
           v-if="leadVibe"
           :to="{ name: 'shop' }"
-          class="group relative block min-h-[24rem] overflow-hidden rounded-[1.35rem] border border-[rgba(128,47,68,0.12)] bg-[linear-gradient(135deg,#f9f3ef,#f4ece7)] p-4 shadow-[0_24px_55px_rgba(17,17,17,0.06)] lg:min-h-[32rem]"
+          class="group relative block min-h-96 overflow-hidden rounded-[1.35rem] border border-[rgba(128,47,68,0.12)] bg-[linear-gradient(135deg,#f9f3ef,#f4ece7)] p-4 shadow-[0_24px_55px_rgba(17,17,17,0.06)] lg:min-h-128"
         >
           <img
             :alt="leadVibe.name"
@@ -267,11 +265,27 @@ onMounted(async () => {
           </RouterLink>
         </div>
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <ProductCard
-            v-for="product in homeData.bestSellers"
-            :key="product.id"
-            :product="product"
-          />
+          <template v-if="loading">
+            <article
+              v-for="index in 4"
+              :key="`best-seller-skeleton-${index}`"
+              class="skeleton-panel overflow-hidden p-4"
+            >
+              <div class="skeleton-block aspect-[4/5] w-full rounded-[1.1rem]"></div>
+              <div class="mt-5 space-y-3">
+                <div class="skeleton-block skeleton-line w-2/3"></div>
+                <div class="skeleton-block skeleton-line w-1/2"></div>
+                <div class="skeleton-block skeleton-line w-1/3"></div>
+              </div>
+            </article>
+          </template>
+          <template v-else>
+            <ProductCard
+              v-for="product in homeData.bestSellers"
+              :key="product.id"
+              :product="product"
+            />
+          </template>
         </div>
       </div>
     </section>
@@ -314,11 +328,27 @@ onMounted(async () => {
           </h2>
         </div>
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          <ProductCard
-            v-for="product in homeData.featuredProducts"
-            :key="product.id"
-            :product="product"
-          />
+          <template v-if="loading">
+            <article
+              v-for="index in 8"
+              :key="`featured-skeleton-${index}`"
+              class="skeleton-panel overflow-hidden p-4"
+            >
+              <div class="skeleton-block aspect-[4/5] w-full rounded-[1.1rem]"></div>
+              <div class="mt-5 space-y-3">
+                <div class="skeleton-block skeleton-line w-3/4"></div>
+                <div class="skeleton-block skeleton-line w-1/2"></div>
+                <div class="skeleton-block skeleton-line w-1/3"></div>
+              </div>
+            </article>
+          </template>
+          <template v-else>
+            <ProductCard
+              v-for="product in homeData.featuredProducts"
+              :key="product.id"
+              :product="product"
+            />
+          </template>
         </div>
       </div>
     </section>

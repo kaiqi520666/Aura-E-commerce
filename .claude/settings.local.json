@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xxd \"e:/App/cursor/Aesthetic-E-commerce/cool-admin-midway/src/modules/mall/db.json\")",
+      "Bash(xxd \"e:/App/cursor/Aesthetic-E-commerce/cool-admin-midway/dist/modules/mall/db.json\")",
+      "Bash(python3 -c \":*)"
+    ]
+  }
+}

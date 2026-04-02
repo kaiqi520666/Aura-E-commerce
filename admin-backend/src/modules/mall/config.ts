@@ -10,7 +10,10 @@ export default () => {
     // 模块描述
     description: '商城相关的功能模块',
     // 前端商城地址，用于支付完成后跳转结果页
-    frontendBaseUrl: 'http://localhost:5173',
+    frontendBaseUrl:
+      process.env.FRONTEND_BASE_URL ||
+      process.env.MALL_FRONTEND_BASE_URL ||
+      'http://localhost:5173',
     paypal: {
       clientId: process.env.PAYPAL_CLIENT_ID || '',
       clientSecret: process.env.PAYPAL_CLIENT_SECRET || '',

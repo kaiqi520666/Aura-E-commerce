@@ -259,6 +259,12 @@
 - 影响目录：`admin-backend/src/modules/mall`、`h5-aura/src`、`web-admin/src/modules/mall/views`
 - 后续协作结论：不要再把商品副标题或商品 SEO 标识当成现有字段使用；分类 `slug` 仍然保留并继续承担前台分类筛选与导航跳转
 
+### 2026-04-02
+
+- 商城支付结果页回跳地址改为优先读取环境变量 `FRONTEND_BASE_URL` / `MALL_FRONTEND_BASE_URL`，不再默认依赖部署环境以外的固定域名
+- 影响目录：`admin-backend/src/modules/mall`
+- 后续协作结论：服务端部署前必须明确配置前台商城域名，否则支付成功后仍会回退到本地默认地址
+
 ### 后续追加格式
 
 请按下面格式继续维护：
